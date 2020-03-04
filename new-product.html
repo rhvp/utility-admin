@@ -32,11 +32,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-lock"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Store Admin</div>
+        <div id="admin-name" class="sidebar-brand-text mx-3">Store Admin</div>
       </a>
 
       <!-- Divider -->
@@ -68,14 +68,21 @@
       <!-- Nav Item - Pages Collapse Menu -->
 
       <!-- Nav Item - Orders -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="orders.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Orders</span></a>
       </li>
 
-      <!-- Nav Item - Products -->
+      <!-- Nav Item - Categories -->
       <li class="nav-item">
+        <a class="nav-link" href="create-category.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Add Category</span></a>
+      </li>
+
+      <!-- Nav Item - Products -->
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-table"></i>
           <span>Products</span>
@@ -135,27 +142,33 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-body">
-                <form>
+                <form class="new-product">
                     <div class="form-group">
-                      <label for="pro_name">Product Name </label>
-                      <input type="text" class="form-control" id="pro_name" aria-describedby="emailHelp">
-                      
+                      <input type="text" class="form-control form-control-new-product" id="pro_name" placeholder="Product Name" required>
                     </div>
                    <div class="form-group">
-                      <label for="pro_price">Product price</label>
-                      <input type="text" class="form-control" id="pro_price">
+                      <input type="number" class="form-control form-control-new-product" id="pro_price" placeholder="Product Price (&#8358;)" required>
                     </div> 
                     <div class="form-group">
-                        <label for="pro_desc">Product Description</label>
-                        <textarea class="form-control" id="pro_desc" rows="3"></textarea>
+                      <input type="number" class="form-control form-control-new-product" id="pro_slot" placeholder="Units Available" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="category">Select Product Category:</label>
+                      <select class="form-control" name="category" id="category">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control form-control-new-product" placeholder="Product Description" id="pro_desc" rows="3" required></textarea>
                       </div>
                     
                       <div class="form-group">
-                        <label for="pro_img">Product Image</label>
-                        <input type="file" class="form-control " style="border: none;" id="pro_img">
+                        <label for="pro_img">Product Images (Multiple)</label>
+                        <input type="file" class="form-control form-control-new-product" style="border: none;" id="pro_img" multiple required>
+                        <div id="preview"></div>
                       </div> 
                     
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                   </form>
                   
             </div>
@@ -171,7 +184,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Utility Store 2020</span>
           </div>
         </div>
       </footer>

@@ -32,11 +32,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-lock"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Store Admin</div>
+        <div id="admin-name" class="sidebar-brand-text mx-3">Store Admin</div>
       </a>
 
       <!-- Divider -->
@@ -72,6 +72,12 @@
         <a class="nav-link" href="orders.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Orders</span></a>
+      </li>
+      <!-- Nav Item - Categories -->
+      <li class="nav-item">
+        <a class="nav-link" href="create-category.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Add Category</span></a>
       </li>
 
       <!-- Nav Item - Products -->
@@ -140,40 +146,16 @@
                   <thead>
                     <tr>
                       <th>Product Name</th>
-                      <th>Product Price (&#8358;)</th>
-                      <th>Product Image</th>
-                      <th>Product Description</th>
+                      <th>Quantity</th>
+                      <th>Order Reference</th>
+                      <th>Payment Option</th>
                       <th>Product S.K.U</th>
-                      <th>Internal Transaction ID</th>
-                      <th>External Transaction ID</th>
-                      <th>Product Status</th>
-                     
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Safety Kit</th>
-                      <th> 50,000  </th>
-                      <th><img src="img/safety-kit.jpg" height="50" width="70"></th>
-                      <th>Safety Kit for your indoor and outdoor event to prevent issues</th>
-                      <th>SKU235</th>
-                      <th>PRO3084</th>
-                      <th>FLU94270</th>
-                      <th>Completed</th>
-
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+                  <tbody id="orders">
                   </tbody>
                 </table>
+                <div id="fetching-data">Fetching Orders...</div>
               </div>
             </div>
           </div>
@@ -188,7 +170,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Utility Store 2020</span>
           </div>
         </div>
       </footer>
@@ -224,6 +206,7 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/orders.js"></script>
 
 </body>
 
