@@ -2,7 +2,6 @@ $(document).ready(()=>{
     const token = localStorage.getItem('token');
     fetch('https://cors-anywhere.herokuapp.com/https://pacific-waters-37938.herokuapp.com/api/v1/orders',{
         method: 'GET',
-        cache: 'force-cache',
         headers: {
             'Authorization': token
         }

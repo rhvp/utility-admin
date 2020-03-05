@@ -21,7 +21,7 @@ $(document).ready(()=>{
             body: JSON.stringify(post_data)
         }).then((res)=>res.json()).then((data)=>{
             console.log(data)
-            // location.reload();
+            location.reload();
         }).catch((err)=>{
             console.error('Error:', err)
         })
